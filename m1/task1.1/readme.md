@@ -1,4 +1,6 @@
 # There is results of Task 1
+## Devops is a high-level technical specialist with in-depth knowledge of how CI / CD works, who is highly qualified in many areas of IT technologies, such as operating systems, databases, network technologies, etc...
+
 ## Below are screenshots for each stage of the task
 ### Steps 1 - 5
 
