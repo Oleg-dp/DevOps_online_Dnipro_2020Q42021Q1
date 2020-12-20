@@ -48,10 +48,10 @@
 #### show some logs ...
 
 ### Step 23
-![Step 23 ](./Results/Task1.1.23%20step.png "Step 23")
 
 #### Create task1.1_GIT.txt and push all to Github
 
+![Step 23 ](./Results/Task1.1.23%20step.png "Step 23")
 
 ## There is path to task1.1_GIT
 [link to task1.1_GIT](./Results/task1.1_GIT.txt)
