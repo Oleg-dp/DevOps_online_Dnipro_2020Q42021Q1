@@ -49,7 +49,7 @@
 
 ### Step 23
 
-#### Create task1.1_GIT.txt and push all to Github
+#### Create task1.1_GIT.txt, add screenshots and push all to Github
 
 ![Step 23 ](./Results/Task1.1.23%20step.png "Step 23")
 
