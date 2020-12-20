@@ -36,7 +36,7 @@
 
 ![Step 21 - 22](./Results/Task1.1.21-22%20steps.png "Steps 21-22")
 
-### Step 22 part 
+### Step 22 part 1
 
 #### show some logs ...
 
@@ -48,7 +48,7 @@
 #### show some logs ...
 
 ### Step 23
-![Step 23 ](./Results/Task1.1.23%20steps.png "Step 23")
+![Step 23 ](./Results/Task1.1.23%20step.png "Step 23")
 
 #### Create task1.1_GIT.txt and push all to Github
 
