@@ -1,0 +1,16 @@
+9351195 HEAD@{0}: merge develop: Fast-forward
+a283be0 HEAD@{1}: checkout: moving from develop to master
+9351195 HEAD@{2}: commit (merge): Resolving conflict
+d61f5ab HEAD@{3}: merge images: Fast-forward
+ea5f826 HEAD@{4}: checkout: moving from styles to develop
+647270d HEAD@{5}: commit: Done 17. Index.html from branch images to style branch has been edited.
+bd29e79 HEAD@{6}: commit: Done 16. Work with styles complete
+ea5f826 HEAD@{7}: checkout: moving from develop to styles
+ea5f826 HEAD@{8}: checkout: moving from images to develop
+d61f5ab HEAD@{9}: commit: Done 14. Index.html has been changed
+1e5c11f HEAD@{10}: commit: Done 13. Added images folder with some images inside it.
+ea5f826 HEAD@{11}: checkout: moving from develop to images
+ea5f826 HEAD@{12}: commit: Done step 12. Create index.html in develop branch
+a283be0 HEAD@{13}: checkout: moving from master to develop
+a283be0 HEAD@{14}: commit: Create empty readme.txt in m1/task1.1/
+ea135fc HEAD@{15}: commit (initial): Initial commit of REPO and project structure.
