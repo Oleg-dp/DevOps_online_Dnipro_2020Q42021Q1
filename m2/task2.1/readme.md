@@ -43,6 +43,9 @@
 ![Screenshots](./Screenshots/33_vagrant.png)
 ![Screenshots](./Screenshots/34_vagrant.png)
 ![Screenshots](./Screenshots/35_vagrant.png)
+
+# Create own Vagrant box
+
 ![Screenshots](./Screenshots/36_vagrant_box.png)
 ![Screenshots](./Screenshots/37_vagrant_box.png)
 ![Screenshots](./Screenshots/38_vagrant_box.png)
