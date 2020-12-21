@@ -1,6 +1,8 @@
 # Results of task2.1
 [Link to vagrant file - centos/7](./Vagrant/Vagrantfile.centos7)
+#
 [Link to vagrant file - precise32](./Vagrant/Vagrantfile.precise32)
+#
 [Link to vagrant file - Vagrantfile.myBOX](./Vagrant/Vagrantfile.myBOX)
 
 ## Screenshots Step1 - Step 3.2:
