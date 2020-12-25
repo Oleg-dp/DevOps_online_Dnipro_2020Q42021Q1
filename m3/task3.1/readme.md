@@ -1,4 +1,4 @@
-# Task 3.1 Part1 - Part 2 Steps 1-12
+# Task 3.1  Steps 1-12
 ![Screenshots](./Screenshots/01_database.png)
 ![Screenshots](./Screenshots/02_database.png)
 ![Screenshots](./Screenshots/03_database.png)
