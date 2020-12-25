@@ -20,10 +20,10 @@
 ![Screenshots](./Screenshots/11_export.png)
 ![Screenshots](./Screenshots/12_import.png)
 ![Screenshots](./Screenshots/13_import.png)
-![Screenshots](./Screenshots/14_mount_usd_hdd.png)
 
 ## Start Part 2 - Configuration of cirtual machines
 
+![Screenshots](./Screenshots/14_mount_usd_hdd.png)
 ![Screenshots](./Screenshots/15_shared_folder.png)
 ![Screenshots](./Screenshots/16_shared_folder.png)
 ![Screenshots](./Screenshots/17_shared_folder.png)
