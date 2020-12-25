@@ -14,3 +14,29 @@
 ![Screenshots](./Screenshots/13_database.png)
 ![Screenshots](./Screenshots/14_database.png)
 ![Screenshots](./Screenshots/15_database.png)
+![Screenshots](./Screenshots/16_database.png)
+![Screenshots](./Screenshots/17_database.png)
+
+## Steps 13 - 16
+
+![Screenshots](./Screenshots/18_database.png)
+![Screenshots](./Screenshots/19_database.png)
+![Screenshots](./Screenshots/20_database.png)
+![Screenshots](./Screenshots/21_database.png)
+
+## Steps 17 - 19
+
+![Screenshots](./Screenshots/22_database.png)
+![Screenshots](./Screenshots/23_database.png)
+![Screenshots](./Screenshots/24_database.png)
+![Screenshots](./Screenshots/25_database.png)
+![Screenshots](./Screenshots/26_database.png)
+![Screenshots](./Screenshots/27_database.png)
+![Screenshots](./Screenshots/28_database.png)
+![Screenshots](./Screenshots/29_database.png)
+![Screenshots](./Screenshots/30_database.png)
+![Screenshots](./Screenshots/31_database.png)
+![Screenshots](./Screenshots/32_database.png)
+![Screenshots](./Screenshots/33_database.png)
+![Screenshots](./Screenshots/34_database.png)
+![Screenshots](./Screenshots/35_database.png)
