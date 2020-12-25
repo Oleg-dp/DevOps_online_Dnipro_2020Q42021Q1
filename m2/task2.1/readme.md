@@ -6,6 +6,8 @@
 [Link to vagrant file - Vagrantfile.myBOX](./Vagrant/Vagrantfile.myBOX)
 
 ## Screenshots Step1 - Step 3.2: (All abount Virtual BOX and cli by VBoxManage.exe)
+## Start Part 1. First run Virtual Box and Virtual Machine
+
 ![Screenshots](./Screenshots/01_Create.png)
 ![Screenshots](./Screenshots/03_Create.png)
 ![Screenshots](./Screenshots/04_Create.png)
@@ -19,6 +21,9 @@
 ![Screenshots](./Screenshots/12_import.png)
 ![Screenshots](./Screenshots/13_import.png)
 ![Screenshots](./Screenshots/14_mount_usd_hdd.png)
+
+## Start Part 2 - Explore VM configuration machines
+
 ![Screenshots](./Screenshots/15_shared_folder.png)
 ![Screenshots](./Screenshots/16_shared_folder.png)
 ![Screenshots](./Screenshots/17_shared_folder.png)
@@ -33,7 +38,7 @@
 ![Screenshots](./Screenshots/26_vboxmanage.png)
 ![Screenshots](./Screenshots/27_vboxmanage.png)
 
-# Start PART3 (Work with Vagrant)
+## Start PART3 (Work with Vagrant)
 
 ![Screenshots](./Screenshots/28_vagrant.png)
 ![Screenshots](./Screenshots/29_vagrant.png)
@@ -44,7 +49,7 @@
 ![Screenshots](./Screenshots/34_vagrant.png)
 ![Screenshots](./Screenshots/35_vagrant.png)
 
-# Create own Vagrant box
+## Create own Vagrant box
 
 ![Screenshots](./Screenshots/36_vagrant_box.png)
 ![Screenshots](./Screenshots/37_vagrant_box.png)
