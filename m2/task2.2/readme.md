@@ -1,3 +1,6 @@
+
+Static website on Amazon S3:
+http://bucket.oleg-dp.cf/
 # Task 2.2 Steps 1-10
 
 ![Screenshots](./Screenshots/01_task22.png)
