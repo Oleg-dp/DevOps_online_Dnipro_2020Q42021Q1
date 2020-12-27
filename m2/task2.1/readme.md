@@ -21,7 +21,7 @@
 ![Screenshots](./Screenshots/12_import.png)
 ![Screenshots](./Screenshots/13_import.png)
 
-## Start Part 2 - Configuration of cirtual machines
+## Start Part 2 - Configuration of virtual machines
 
 ![Screenshots](./Screenshots/14_mount_usd_hdd.png)
 ![Screenshots](./Screenshots/15_shared_folder.png)
