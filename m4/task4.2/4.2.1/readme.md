@@ -8,6 +8,7 @@
 ![Screenshots](./Screenshots/06_zavd1.png)
 ![Screenshots](./Screenshots/07_zavd1.png)
 ![Screenshots](./Screenshots/08_zavd1.png)
+![Screenshots](./Screenshots/09_zavd1.png)
 
 ## Cisco Packet Tracer files:
 [link to cpt files](./Cptfiles/Task4.2.1.pkt)
