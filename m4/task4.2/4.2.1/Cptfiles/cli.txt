@@ -1,0 +1,177 @@
+int fastEthernet0/22
+switchport trunk encapsulation dot1q 
+switchport mode trunk
+switchport trunk allowed vlan 11,12,21,22
+int fastEthernet0/23
+switchport trunk encapsulation dot1q 
+switchport mode trunk
+switchport trunk allowed vlan 11,12,21,22
+int fastEthernet0/24
+switchport trunk encapsulation dot1q 
+switchport mode trunk
+switchport trunk allowed vlan 11,12,21,22
+
+interface Vlan12
+ ip address 192.168.12.254 255.255.255.0
+ no shutdown
+
+interface fastEthernet 0/1
+switchport mode access 
+switchport access vlan 12
+interface fastEthernet 0/2
+switchport mode access 
+switchport access vlan 12
+interface fastEthernet 0/3
+switchport mode access 
+switchport access vlan 12
+interface fastEthernet 0/4
+switchport mode access 
+switchport access vlan 12
+interface fastEthernet 0/5
+switchport mode access 
+switchport access vlan 12
+
+*********************************************
+interface fastEthernet 0/1
+switchport mode access 
+switchport access vlan 11
+interface fastEthernet 0/2
+switchport mode access 
+switchport access vlan 11
+interface fastEthernet 0/3
+switchport mode access 
+switchport access vlan 11
+interface fastEthernet 0/4
+switchport mode access 
+switchport access vlan 11
+interface fastEthernet 0/5
+switchport mode access 
+switchport access vlan 11
+
+interface Vlan11
+ ip address 192.168.11.254 255.255.255.0
+ no shutdown
+
+vlan 11 name vlan11
+vlan 12 name vlan12
+vlan 21 name vlan21
+vlan 22 name vlan22
+
+**************Router Vlan12
+interface Vlan22
+ ip address 192.168.22.253 255.255.255.0
+ no shutdown
+
+interface Vlan21
+ ip address 192.168.21.253 255.255.255.0
+ no shutdown
+
+interface Vlan11
+ ip address 192.168.11.253 255.255.255.0
+ no shutdown
+**************Router Vlan12
+
+**************Router Vlan11
+interface Vlan22
+ ip address 192.168.22.252 255.255.255.0
+ no shutdown
+
+interface Vlan21
+ ip address 192.168.21.252 255.255.255.0
+ no shutdown
+
+interface Vlan12
+ ip address 192.168.12.252 255.255.255.0
+ no shutdown
+**************Router Vlan11
+
+**************Router Vlan22
+
+interface FastEthernet0/1
+ switchport mode access
+ switchport access vlan 22
+ switchport nonegotiate
+!
+interface FastEthernet0/2
+ switchport mode access
+ switchport access vlan 22
+ switchport nonegotiate
+!
+interface FastEthernet0/3
+ switchport mode access
+ switchport access vlan 22
+ switchport nonegotiate
+!
+interface FastEthernet0/4
+ switchport mode access
+ switchport access vlan 22
+ switchport nonegotiate
+!
+interface FastEthernet0/5
+ switchport mode access
+ switchport access vlan 22
+ switchport nonegotiate
+!
+
+
+interface Vlan11
+ ip address 192.168.11.251 255.255.255.0
+ no shutdown
+
+interface Vlan21
+ ip address 192.168.21.251 255.255.255.0
+ no shutdown
+
+interface Vlan12
+ ip address 192.168.12.251 255.255.255.0
+ no shutdown
+
+ip address 192.168.22.254 255.255.255.0
+
+
+**************Router Vlan22
+**************Router Vlan21
+
+interface FastEthernet0/1
+ switchport mode access
+ switchport access vlan 21
+ switchport nonegotiate
+!
+interface FastEthernet0/2
+ switchport mode access
+ switchport access vlan 21
+ switchport nonegotiate
+!
+interface FastEthernet0/3
+ switchport mode access
+ switchport access vlan 21
+ switchport nonegotiate
+!
+interface FastEthernet0/4
+ switchport mode access
+ switchport access vlan 21
+ switchport nonegotiate
+!
+interface FastEthernet0/5
+ switchport mode access
+ switchport access vlan 21
+ switchport nonegotiate
+!
+
+
+interface Vlan11
+ ip address 192.168.11.250 255.255.255.0
+ no shutdown
+
+interface Vlan21
+ ip address 192.168.21.254 255.255.255.0
+ no shutdown
+
+interface Vlan12
+ ip address 192.168.12.251 255.255.255.0
+ no shutdown
+
+ip address 192.168.22.254 255.255.255.0
+
+
+**************Router Vlan21

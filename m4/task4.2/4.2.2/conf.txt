@@ -1,0 +1,113 @@
+conf t
+int gigabitEthernet 1/0/1
+no cdp enable
+switchport mode access 
+switchport access vlan 11
+no shut
+int vl 11
+ip address 192.168.0.1 255.255.255.248
+no shut
+
+
+int gigabitEthernet 1/0/2
+no cdp enable
+switchport mode access 
+switchport access vlan 12
+no shut
+int vl 12
+ip address 192.168.0.9 255.255.255.248
+no shut
+
+int gigabitEthernet 1/0/3
+no cdp enable
+switchport mode access 
+switchport access vlan 21
+no shut
+int vl 21
+ip address 192.168.0.17 255.255.255.248
+no shut
+
+int gigabitEthernet 1/0/4
+no cdp enable
+switchport mode access 
+switchport access vlan 22
+no shut
+int vl 22
+ip address 192.168.0.25 255.255.255.248
+no shut
+
+int gigabitEthernet 1/0/5
+no cdp enable
+switchport mode access 
+switchport access vlan 31
+no shut
+int vl 31
+ip address 192.168.0.33 255.255.255.248
+no shut
+
+int gigabitEthernet 1/0/6
+no cdp enable
+switchport mode access 
+switchport access vlan 32
+no shut
+int vl 32
+ip address 192.168.0.41 255.255.255.248
+no shut
+
+int gigabitEthernet 1/0/7
+no cdp enable
+switchport mode access 
+switchport access vlan 41
+no shut
+int vl 41
+ip address 192.168.0.49 255.255.255.248
+no shut
+
+int gigabitEthernet 1/0/8
+no cdp enable
+switchport mode access 
+switchport access vlan 42
+no shut
+int vl 42
+ip address 192.168.0.57 255.255.255.248
+no shut
+*********************************************************
+ip dhcp pool Vlan11
+   network 192.168.0.0 255.255.255.248
+   default-router 192.168.0.1
+exit
+ 
+ip dhcp pool Vlan12
+   network 192.168.0.8 255.255.255.248
+   default-router 192.168.0.9
+exit
+
+ip dhcp pool Vlan21
+   network 192.168.0.16 255.255.255.248
+   default-router 192.168.0.17
+exit
+
+ip dhcp pool Vlan22
+   network 192.168.0.24 255.255.255.248
+   default-router 192.168.0.25
+exit
+
+ip dhcp pool Vlan31
+   network 192.168.0.32 255.255.255.248
+   default-router 192.168.0.33
+exit
+
+ip dhcp pool Vlan32
+   network 192.168.0.40 255.255.255.248
+   default-router 192.168.0.41
+exit
+
+ip dhcp pool Vlan41
+   network 192.168.0.48 255.255.255.248
+   default-router 192.168.0.49
+exit
+
+ip dhcp pool Vlan42
+   network 192.168.0.56 255.255.255.248
+   default-router 192.168.0.57
+exit
