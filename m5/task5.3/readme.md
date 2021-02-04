@@ -37,5 +37,3 @@
 ![Screenshots](./Screenshots/36_task5.3.png)
 ![Screenshots](./Screenshots/37_task5.3.png)
 ![Screenshots](./Screenshots/38_task5.3.png)
-![Screenshots](./Screenshots/39_task5.3.png)
-![Screenshots](./Screenshots/40_task5.3.png)
