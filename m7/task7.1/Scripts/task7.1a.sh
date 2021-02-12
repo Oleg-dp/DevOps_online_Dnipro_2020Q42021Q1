@@ -1,11 +1,7 @@
 #!/bin/bash
 
 #Declare global variables
-ipaddr=`/usr/sbin/ip a | grep inet | grep -v "127.0.0.1" | awk '{print $2}'`
-
-#Preparing to work
-rm -rf $valid_host_txt
-rm -rf $online_host_txt
+ipaddr=`/usr/sbin/ip a | grep inet | grep -v inet6 | grep -v "127.0.0.1" | awk '{print $2}'`
 
 #Declare functions
 
@@ -16,9 +12,8 @@ function func_all()
 
 function func_target()
 {
-#    /usr/bin/nmap -sn $ipaddr -oG - | awk '/Up$/{print $2 " " $3}'
-    /usr/bin/netstat -nlpt
-#    /usr/bin/nmap $ipaddr | grep open
+    /usr/bin/netstat -nlpt | grep -v tcp6
+    /usr/bin/nmap -sT --open $ipaddr
 }
 
 #Start program
@@ -26,6 +21,12 @@ function func_target()
 if [ ! -f /usr/bin/nmap ];
 then 
     echo "/usr/bin/nmap is not installed on your system. Script aborted."
+    exit 1
+fi
+
+if [ ! -f /usr/bin/netstat ];
+then 
+    echo "/usr/bin/netstat is not installed on your system. Script aborted."
     exit 1
 fi
 

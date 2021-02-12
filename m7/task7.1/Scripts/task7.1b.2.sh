@@ -5,3 +5,4 @@ awk '{print $7}' $1 | sort | uniq -c | sort -gr > $file_out
 read line1
 } < $file_out
 echo $line1
+rm -rf out_script2
