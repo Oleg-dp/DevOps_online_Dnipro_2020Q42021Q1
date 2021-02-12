@@ -30,7 +30,6 @@ then
     exit 1
 fi
 
-
 if [ -d $1 ]; 
 then
     if [ -d $2 ]; 
@@ -44,6 +43,3 @@ else
     echo "Not valid parametrs"
     exit 1
 fi
-
-
-

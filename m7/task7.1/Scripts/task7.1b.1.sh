@@ -1,8 +1,4 @@
 #!/bin/bash
-file_out=out_script
-grep -E -o "([0-9]{1,3}[\.]){3}[0-9]{1,3}" $1 | sort | uniq -c | sort -gr > $file_out
-{
-read line1
-} < $file_out
-echo $line1
-rm -rf out_script
+file_in=$1
+cat $1 | grep -E -o "^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}" | sort | uniq -c | sort -gr | head -n 1
+

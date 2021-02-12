@@ -1,8 +1,4 @@
 #!/bin/bash
-file_out=out_script2
-awk '{print $7}' $1 | sort | uniq -c | sort -gr > $file_out
-{
-read line1
-} < $file_out
-echo $line1
-rm -rf out_script2
+file_in=$1 
+cat $1 | awk '{print $7}' | sort | uniq -c | sort -gr | head -n 1
+
