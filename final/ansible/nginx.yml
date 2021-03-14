@@ -1,0 +1,26 @@
+---
+- name: install nginx
+  hosts: vagrant
+  become: yes
+
+  vars:
+      source_dir: ./files
+      destin_dir: /tmp
+
+
+  tasks:
+  - name: Enable EPEL Repository on CentOS
+    yum:
+      name: http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+      
+
+  - name: Install Nginx Web Server on RedHat Family
+    yum:  name=nginx state=latest
+
+  - name: Start Nginx and enable it during boot
+    service: name=nginx state=started enabled=yes
+
+  - name: Stop service httpd, if started
+    ansible.builtin.service:
+      name: nginx
+      state: started
