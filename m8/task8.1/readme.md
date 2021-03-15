@@ -11,6 +11,9 @@
 ![Screenshots](./Screenshots/10_task_8.1.png)
 ![Screenshots](./Screenshots/11_task_8.1.png)
 ![Screenshots](./Screenshots/12_task_8.1.png)
+![Screenshots](./Screenshots/13_task_8.1.png)
+![Screenshots](./Screenshots/14_task_8.1.png)
+![Screenshots](./Screenshots/15_task_8.1.png)
 
 
 
