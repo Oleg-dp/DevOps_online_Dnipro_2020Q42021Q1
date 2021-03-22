@@ -1,4 +1,4 @@
 [final]
-finaltask1	ansible_host=final.oleg-dp.cf ansible_user=centos ansible_ssh_private_key_file=/home/oleg/work/final/terraform/key/finaltask.pem letsencrypt_email=admin@final.oleg-dp.cf domain_name=final.oleg-dp.cf www_domain_name=final.oleg-dp.cf
-[test]
-testcentos	ansible_host=192.168.111.113 ansible_user=oleg ansible_ssh_private_key_file=/home/oleg/work/final/ansible/foransible.pem letsencrypt_email=admin@final.oleg-dp.cf domain_name=final.oleg-dp.cf
+finaltask1	ansible_host=final.oleg-dp.cf ansible_user=centos ansible_ssh_private_key_file=/home/oleg/work/final/terraform/key/finaltask.pem letsencrypt_email=admin@final.oleg-dp.cf domain_name=final.oleg-dp.cf www_domain_name=final.oleg-dp.cf ansible_ssh_common_args='-o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null"'
+finaltask2	ansible_host=jenkins.oleg-dp.cf ansible_user=centos ansible_ssh_private_key_file=/home/oleg/work/final/terraform/key/finaltask.pem letsencrypt_email=admin@jenkins.oleg-dp.cf domain_name=jenkins.oleg-dp.cf www_domain_name=jenkins.oleg-dp.cf ansible_ssh_common_args='-o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null"'
+finaltask3	ansible_host=java.oleg-dp.cf ansible_user=centos ansible_ssh_private_key_file=/home/oleg/work/final/terraform/key/finaltask.pem letsencrypt_email=admin@java.oleg-dp.cf domain_name=java.oleg-dp.cf www_domain_name=java.oleg-dp.cf ansible_ssh_common_args='-o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null"'

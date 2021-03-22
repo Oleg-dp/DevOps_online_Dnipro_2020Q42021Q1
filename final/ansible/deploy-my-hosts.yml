@@ -1,0 +1,240 @@
+### In this playbook i going to install nginx and letsencrypt on all my hosts
+---
+- hosts: final
+  become: yes
+  gather_facts: no
+
+  pre_tasks:
+    - raw: yum install -y python3 python3-pip snapd git
+
+  tasks:
+
+    - name: Install nginx
+      yum: name=nginx state=latest
+
+    - name: Install snapd 2 step
+      shell: sudo systemctl enable --now snapd.socket
+
+    - name: Install snapd 3 step
+      shell: sudo ln -fs /var/lib/snapd/snap /snap
+
+    - name: Install snapd 4 step
+      shell: sudo systemctl start snapd
+
+    - name: Remove certbot-auto and any Certbot OS packages
+      yum: name=certbot state=absent
+
+    - name: Install Certbot
+      shell: sudo snap install --classic certbot
+
+    - name: Install Certbot step 2
+      shell: sudo ln -fs /snap/bin/certbot /usr/bin/certbot
+
+    - name: Create directory /var/www
+      ansible.builtin.file:
+        path: /var/www
+        state: directory
+        owner: nginx
+        group: nginx
+        mode: '0755'
+
+    - name: Create directory /var/www/html
+      ansible.builtin.file:
+        path: /var/www/html
+        state: directory
+        owner: nginx
+        group: nginx
+        mode: '0755'
+
+    - name: Create directory /var/www/{{ domain_name }}
+      ansible.builtin.file:
+        path: /var/www/{{ domain_name }}
+        state: directory
+        owner: nginx
+        group: nginx
+        mode: '0755'
+
+    - name: Install system nginx config
+      template:
+        src: templates/nginx-template.conf
+        dest: /etc/nginx/nginx.conf
+
+    - name: Start nginx service
+      service: name=nginx state=started enabled=yes
+
+    - name: Create letsencrypt certificate
+      shell: sudo certbot certonly --webroot -w /var/www/html --non-interactive --agree-tos -m {{ letsencrypt_email }} -d {{ domain_name }} -d {{ www_domain_name }}
+
+    - name: Copy my site files
+      copy:
+       src: ./files/index.html
+       dest: /var/www/{{ domain_name }}
+
+    - name: Install system nginx Final config
+      template:
+        src: templates/sneo.conf.final
+        dest: /etc/nginx/nginx.conf
+
+    - name: Start nginx service
+      service: name=nginx state=restarted
+
+    - name: Add letsencrypt cronjob for cert renewal
+      cron:
+       name: letsencrypt_renewal
+       special_time: weekly
+       job: certbot --renew certonly -n --webroot -w /var/www/{{ domain_name }} -m {{ letsencrypt_email }} --agree-tos -d {{ domain_name }} && service nginx reload
+
+### Jenkins configure
+- hosts: finaltask2
+  become: yes
+  gather_facts: no
+
+  pre_tasks:
+    - raw: yum -y install wget curl && yum upgrade -y
+
+  tasks:
+    - name: download jenkins.repo
+      get_url:
+       url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+       dest: /etc/yum.repos.d/jenkins.repo
+
+    - name: import jenkins key
+      rpm_key:
+       state: present
+       key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+    - name: upgrade all packages
+      yum:
+       name: '*'
+       state: latest
+
+    - name: install openjdk
+      yum:
+       name: java-1.8.0-openjdk-devel
+       state: present
+
+    - name: install jenkins
+      yum:
+       name: jenkins
+       state: present
+
+    - name: stop jenkins
+      shell: systemctl stop jenkins || echo "not started"
+
+    - name: start jenkins
+      systemd:
+       name: jenkins
+       state: started
+
+    - name: enable jenkins
+      systemd:
+       name: jenkins
+       enabled: true
+
+    - name: sleep for 30 seconds and continue with play
+      wait_for: timeout=30
+#      delegate_to: localhost
+
+    - name: Install system nginx Jenkins config
+      template:
+        src: templates/jenkins.nginx.template.conf
+        dest: /etc/nginx/nginx.conf
+
+    - name: Start nginx service
+      service: name=nginx state=restarted
+
+    - name: init password jenkin
+      shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+      changed_when: false
+      register: result
+
+    - name: print init password jenkins
+      debug:
+       var: result.stdout
+
+    - name: Copy working Jenkins environment
+      copy:
+       src: ./files/jenkins.tar.gz
+       dest: /var/lib
+
+    - name: Stop jenkins service
+      service: name=jenkins state=stopped
+
+    - name: prepare Jenkins
+      shell: mv /var/lib/jenkins /var/lib/jenkins.orig
+
+    - name: prepare Jenkins
+      shell: tar -C /var/lib -xvzf /var/lib/jenkins.tar.gz
+
+    - name: Start jenkins service
+      service: name=jenkins state=started
+
+- hosts: finaltask3
+  become: yes
+  gather_facts: no
+
+  tasks:
+
+    - name: install openjdk
+      yum:
+       name: java-1.8.0-openjdk-devel
+       state: present
+
+    - name: Install system nginx Jenkins config
+      template:
+        src: templates/java.nginx.template.conf
+        dest: /etc/nginx/nginx.conf
+
+    - name: Start nginx service
+      service: name=nginx state=restarted
+
+- hosts: finaltask1
+  become: yes
+  gather_facts: no
+
+  tasks:
+
+    - name: Recursively change ownership of a directory
+      ansible.builtin.file:
+        path: /var/www/{{ domain_name }}
+        state: directory
+        recurse: yes
+        owner: nginx
+        group: centos
+
+    - name: Change file ownership, group and permissions
+      shell: chmod -R g+rw /var/www/{{ domain_name }}
+
+    - name: Install yum-config-manager
+      shell:  yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+    - name: Install Docker
+      yum:
+        name: docker-ce
+        state: present
+
+    - name: Install Docker-ce-cli
+      yum:
+        name: docker-ce-cli
+        state: present
+
+    - name: Install Contariner.IO
+      yum:
+        name: containerd.io
+        state: present
+
+    - name: start docker
+      shell: usermod -aG docker centos
+
+    - name: start docker
+      systemd:
+        name: docker
+        state: started
+
+    - name: Install system nginx for Docker config
+      template:
+        src: templates/docker.nginx.template.conf
+        dest: /etc/nginx/nginx.conf
+
+    - name: Start nginx service
+      service: name=nginx state=restarted
