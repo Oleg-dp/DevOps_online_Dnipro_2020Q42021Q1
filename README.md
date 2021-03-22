@@ -51,6 +51,11 @@ This is test repo for EPAM training DevOps_online_Dnipro_2020Q42021Q1 tasks
 ### Thereis result of Task 10.1:
 [Task 11.1](./m11/task11.1/readme.md)
 
+### Thereis result of Final Task:
+[Task 11.1](./final/readme.md)
+
+
+
 ## There is repositury structure:
       /
         m1/
