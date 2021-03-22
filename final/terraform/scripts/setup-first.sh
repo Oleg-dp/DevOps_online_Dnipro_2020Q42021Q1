@@ -1,9 +1,8 @@
 #!/bin/sh
 setenforce 0
-yum -y install yum-utils
+/bin/sed -i 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/selinux/config
+yum -y install yum-utils mc wget curl mlocate
+rpm -ivh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 yum -y update
 yum -y upgrade
-yum -y install -y wget curl
-rpm -ivh http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-#setenforce 1
-reboot
+/sbin/shutdown -r 5
