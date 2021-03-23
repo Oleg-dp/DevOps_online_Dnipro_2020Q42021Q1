@@ -226,6 +226,11 @@
     - name: start docker
       shell: usermod -aG docker centos
 
+    - name: enable docker
+      systemd:
+       name: docker
+       enabled: true
+
     - name: start docker
       systemd:
         name: docker
