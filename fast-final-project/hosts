@@ -1,0 +1,3 @@
+[finalsrv]
+jenkinssrv1	ansible_host=gcp02.sneo.cf ansible_user=sneogcp01 ansible_ssh_private_key_file=./gcpkey01.pem letsencrypt_email=admin@final.sneo.cf domain_name=gcp02.sneo.cf www_domain_name=gcp02.sneo.cf ansible_ssh_common_args='-o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null"'
+prodsrv1	ansible_host=finalip02.sneo.cf ansible_user=sneogcp01 ansible_ssh_private_key_file=./gcpkey01.pem letsencrypt_email=admin@final.sneo.cf domain_name=finalip02.sneo.cf www_domain_name=finalip02.sneo.cf ansible_ssh_common_args='-o "StrictHostKeyChecking no" -o "UserKnownHostsFile=/dev/null"'

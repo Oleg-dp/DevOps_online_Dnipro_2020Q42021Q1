@@ -1,0 +1,19 @@
+---
+- hosts: petclinichost
+#  become: yes
+  gather_facts: no
+  
+  tasks:
+    - name: docker stop
+      shell: docker stop my-test-petclinic 
+      ignore_errors: True
+
+    - name: docker remove
+      shell: docker rm my-test-petclinic
+      ignore_errors: True
+
+    - name: docker pull
+      shell: docker pull olegdp/my-test-petclinic:latest
+
+    - name: docker run
+      shell: docker run --restart always --name my-test-petclinic -p 8081:8081 -d olegdp/my-test-petclinic:latest
