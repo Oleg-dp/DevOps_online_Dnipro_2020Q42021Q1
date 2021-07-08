@@ -158,6 +158,11 @@
     - name: prepare Jenkins
       shell: tar -C /var/lib -xvzf /var/lib/jenkins.tar.gz
 
+    - name: Change Jenkins location in xml file to correct domain name
+      template:
+        src: ./templates/jenkins.model.JenkinsLocationConfiguration.xml.j2
+        dest: /var/lib/jenkins/jenkins.model.JenkinsLocationConfiguration.xml
+
     - name: Restore jenkins user ownership on /var/lib/jenkins
       file:
        path: /var/lib/jenkins
@@ -165,16 +170,6 @@
        recurse: yes
        owner: jenkins
        group: jenkins
-
-    - name: start jenkins
-      systemd:
-       name: jenkins
-       state: started
-
-    - name: enable jenkins
-      systemd:
-       name: jenkins
-       enabled: true
 
     - name: Install system nginx jenkins config
       template:
@@ -237,8 +232,15 @@
        owner: jenkins
        group: jenkins
 
-    - name: Restart jenkins service
-      service: name=jenkins state=restarted
+    - name: start jenkins
+      systemd:
+       name: jenkins
+       state: started
+
+    - name: enable jenkins
+      systemd:
+       name: jenkins
+       enabled: true
 
 - hosts: prodsrv1
   become: yes
@@ -253,3 +255,12 @@
 
     - name: Restart nginx service
       service: name=nginx state=restarted
+
+### Message for all hosts
+- hosts: finalsrv
+  become: yes
+  gather_facts: no
+
+  tasks:
+    - debug:
+        msg: "Please visit: https://{{ domain_name }}"
